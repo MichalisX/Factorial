@@ -1,0 +1,21 @@
+def factorial(n):
+    if n < 2:
+        return 1
+    return n * factorial (n-1)
+
+x = None
+while x is None:                # Reads correctly an integer into x
+    try:
+        s = input("Enter an integer: ")
+        x = int(s)
+    except ValueError:
+        print("%s is not an integer!" % s)
+
+if x<=0:
+    print("Cannot compute")
+else:
+    if x<999:
+        print("Factorial of n =",x,"is", factorial(x))
+    else:
+        ypol=divmod(x,998)
+        print("Factorial of n=1",x,"is",pow(factorial(998),ypol[0])*factorial(ypol[1]))
